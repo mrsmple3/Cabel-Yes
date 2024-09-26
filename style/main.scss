@@ -1271,6 +1271,9 @@ main {
 	.about__img {
 		width: size(770px);
 		height: size(749px);
+		img {
+			height: max-content;
+		}
 		@media screen and (max-width: 1050px) {
 			width: 100%;
 			height: max-content;

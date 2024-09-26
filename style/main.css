@@ -1506,6 +1506,10 @@ main .flex-center .catalog__btn::after {
   width: calc(32.0833333333 * (1vw + 1vh));
   height: calc(31.2083333333 * (1vw + 1vh));
 }
+.about .about__img img {
+  height: -moz-max-content;
+  height: max-content;
+}
 @media screen and (max-width: 1050px) {
   .about .about__img {
     width: 100%;
