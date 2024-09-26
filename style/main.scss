@@ -448,9 +448,19 @@ header {
 		border-radius: 5px;
 		overflow: hidden;
 		z-index: 6;
+		&::-webkit-scrollbar {
+			width: 3px;
+		}
+		&::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #4444;
+			outline: 1px solid #4444;
+		}
 		&.active {
-			overflow: visible;
-			height: size(260px);
+			overflow-y: auto;
+			height: max-content;
 			padding-top: size(23px);
 			padding-bottom: size(23px);
 		}
@@ -463,7 +473,7 @@ header {
 		font-weight: 400;
 		line-height: size(17.6px);
 		word-wrap: break-word;
-		white-space: nowrap;
+		// white-space: nowrap;
 	}
 	.submenu-nested_link {
 		@include flex-center();
