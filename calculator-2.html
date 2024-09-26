@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="shortcut icon" href="./assets/imgs/logo.svg" type="image/x-icon" />
+
+		<link rel="stylesheet" href="./style/swiper.min.css" />
+		<link rel="stylesheet" href="./style/intTelInput/intlTelInput.min.css" />
+		<link rel="stylesheet" href="./style/main.css" />
+
+		<!-- scipt  -->
+		<script src="./script/lib/jquery-3.7.1.min.js" defer></script>
+		<script src="./script/lib/swiper.min.js" defer></script>
+
+		<!-- gsap -->
+		<script src="./script/lib/gsap/gsap.min.js" defer></script>
+		<script src="./script/lib/gsap/Observer.min.js" defer></script>
+		<script src="./script/lib/gsap/ScrollSmoother.min.js" defer></script>
+		<script src="./script/lib/gsap/ScrollToPlugin.js" defer></script>
+		<script src="./script/lib/gsap/ScrollTrigger.min.js" defer></script>
+		<script src="./script/lib/gsap/TextPlugin.js" defer></script>
+
+		<!-- intlTelInput  -->
+		<script src="./script/lib/intlTelInput/intlTelInput.min.js" defer></script>
+		<script src="./script/lib/intlTelInput/utils.js" defer></script>
+
+		<script src="./script/slider.js" defer></script>
+		<script src="./script/app.js" defer></script>
+		<script src="./script/pages.js" defer></script>
+		<title>Yes Cabel</title>
+	</head>
+	<body>
+		<!-- header start  -->
+		<a href="/" class="logo">
+			<div class="logo__container">
+				<img src="./assets/imgs/logo.svg" alt="" />
+			</div>
+			<div class="logo__fon"></div>
+		</a>
+		<header>
+			<a href="" class="mobile__logo"><img src="./assets/imgs/logo.svg" alt="" /></a>
+			<div class="header__top">
+				<div class="flex-center">
+					<div class="note"></div>
+					<a href="tel:+ +998 (55) 514-90-00" class="header__top__title"> +998 (55) 514-90-00</a>
+					|
+					<a href="tel:++998 (55) 902-90-00" class="header__top__title">+998 (55) 902-90-00</a>
+					|
+					<a href="mailto:info@yes-cable.uz" class="header__top__title">info@yes-cable.uz</a>
+				</div>
+				<div class="flex-center gap-15">
+					<div class="header__top__title">График работы: Пн-Пт: 8:00-17:00</div>
+					|
+					<div class="langs">
+						<a href="" class="lang_item"><img src="./assets/icons/lang-1.svg" alt="" /></a>
+						<a href="" class="lang_item"><img src="./assets/icons/lang-2.svg" alt="" /></a>
+						<a href="" class="lang_item"><img src="./assets/icons/lang-3.svg" alt="" /></a>
+					</div>
+					<div class="note"></div>
+				</div>
+			</div>
+
+			<div class="menu">
+				<nav>
+					<a href="" class="nav__item">Главная</a>
+					<div class="submenu">
+						<a href="" class="nav__item submenu__title">Компания</a>
+						<div class="submenu__container for-nested">
+							<a href="" class="submenu__link">О нас</a>
+							<a href="" class="submenu__link">Миссия и ценности</a>
+							<a href="" class="submenu__link">Проекты</a>
+							<a href="" class="submenu__link">Политика качества</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Производство</a>
+								<div class="submenu-nested__container for-nested">
+									<a href="" class="submenu__link">Коллектив</a>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+							<a href="" class="submenu__link">Сертификаты</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Персонал</a>
+								<div class="submenu-nested__container for-nested">
+									<a href="" class="submenu__link">Коллектив</a>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="submenu">
+						<a href="" class="nav__item submenu__title">Продукция</a>
+						<div class="submenu__container for-nested">
+							<a href="" class="submenu__link">О нас</a>
+							<a href="" class="submenu__link">Миссия и ценности</a>
+							<a href="" class="submenu__link">Проекты</a>
+							<a href="" class="submenu__link">Политика качества</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Производство</a>
+								<div class="submenu-nested__container for-nested">
+									<div class="submenu-nested">
+										<a href="" class="submenu__link submenu-nested_link">Коллектив</a>
+										<div class="submenu-nested__container for-nested">
+											<a href="" class="submenu__link">Коллектив</a>
+											<a href="" class="submenu__link">Вакансии</a>
+										</div>
+									</div>
+									<div class="submenu-nested">
+										<a href="" class="submenu__link submenu-nested_link">Вакансии</a>
+										<div class="submenu-nested__container for-nested">
+											<a href="" class="submenu__link">Коллектив</a>
+											<a href="" class="submenu__link">Вакансии</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="" class="submenu__link">Сертификаты</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Персонал</a>
+								<div class="submenu-nested__container for-nested">
+									<a href="" class="submenu__link">Коллектив</a>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="submenu margin-header">
+						<a href="" class="nav__item submenu__title">Партнерство</a>
+					</div>
+					<a href="" class="nav__item">Материалы</a>
+					<a href="" class="nav__item">Новости</a>
+				</nav>
+				<div class="search"><img src="./assets/icons/search.svg" alt="" class="search__img" /></div>
+				<a href="" class="contact-btn">Контакты</a>
+			</div>
+			<form class="header__search-form">
+				<input type="search" name="header__search-form" placeholder="Поиск продукции" />
+			</form>
+			<div class="flex-stretch">
+				<div class="lang-dropdown">
+					<div class="dropdown-lang">
+						<div class="current-lang">
+							<img src="./assets/icons/lang-1.svg" alt="" class="current-lang__img" />
+							<img src="./assets/icons/triangel.svg" alt="" class="triangel" />
+						</div>
+						<ul class="dropdown-list">
+							<li class="item-dropdown"><img src="./assets/icons/lang-1.svg" alt="" /></li>
+							<li class="item-dropdown"><img src="./assets/icons/lang-2.svg" alt="" /></li>
+							<li class="item-dropdown"><img src="./assets/icons/lang-3.svg" alt="" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="menu-btn">
+					<div class="menu__replacer"></div>
+					<img src="./assets/icons/menu-burger.svg" alt="" class="menu-btn__item menu-burger" />
+					<img src="./assets/icons/circle-xmark.svg" alt="" class="menu-btn__item circle-xmark" />
+				</div>
+			</div>
+		</header>
+		<!-- Mobile menu  -->
+		<div class="mobile-menu">
+			<div class="flex-col-start mobile-menu__container">
+				<form class="mobile-menu__search">
+					<input type="search" name="search" placeholder="Поиск продукции" />
+					<svg class="search-img" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="path-1-inside-1_451_1269" fill="white">
+							<path
+								d="M18.778 17.6595L14.0564 12.9379C15.3431 11.3642 15.9757 9.35623 15.8234 7.32922C15.6711 5.30222 14.7455 3.41129 13.2381 2.04757C11.7308 0.683849 9.75687 -0.0483305 7.72479 0.00247793C5.69271 0.0532864 3.75789 0.883195 2.32054 2.32054C0.883195 3.75789 0.0532864 5.69271 0.00247793 7.72479C-0.0483305 9.75687 0.683849 11.7308 2.04757 13.2381C3.41129 14.7455 5.30222 15.6711 7.32922 15.8234C9.35623 15.9757 11.3642 15.3431 12.9379 14.0564L17.6595 18.778C17.8086 18.922 18.0085 19.0018 18.2159 19C18.4233 18.9982 18.6217 18.915 18.7683 18.7683C18.915 18.6217 18.9982 18.4233 19 18.2159C19.0018 18.0085 18.922 17.8086 18.778 17.6595ZM7.93549 14.2636C6.6839 14.2636 5.46042 13.8925 4.41976 13.1971C3.37911 12.5018 2.56801 11.5135 2.08905 10.3572C1.61009 9.20084 1.48477 7.92847 1.72895 6.70093C1.97312 5.47339 2.57581 4.34583 3.46082 3.46082C4.34583 2.57581 5.47339 1.97312 6.70093 1.72895C7.92847 1.48477 9.20084 1.61009 10.3572 2.08905C11.5135 2.56801 12.5018 3.37911 13.1971 4.41976C13.8925 5.46042 14.2636 6.6839 14.2636 7.93549C14.2617 9.61323 13.5944 11.2217 12.4081 12.4081C11.2217 13.5944 9.61323 14.2617 7.93549 14.2636Z" />
+						</mask>
+						<path
+							d="M18.778 17.6595L14.0564 12.9379C15.3431 11.3642 15.9757 9.35623 15.8234 7.32922C15.6711 5.30222 14.7455 3.41129 13.2381 2.04757C11.7308 0.683849 9.75687 -0.0483305 7.72479 0.00247793C5.69271 0.0532864 3.75789 0.883195 2.32054 2.32054C0.883195 3.75789 0.0532864 5.69271 0.00247793 7.72479C-0.0483305 9.75687 0.683849 11.7308 2.04757 13.2381C3.41129 14.7455 5.30222 15.6711 7.32922 15.8234C9.35623 15.9757 11.3642 15.3431 12.9379 14.0564L17.6595 18.778C17.8086 18.922 18.0085 19.0018 18.2159 19C18.4233 18.9982 18.6217 18.915 18.7683 18.7683C18.915 18.6217 18.9982 18.4233 19 18.2159C19.0018 18.0085 18.922 17.8086 18.778 17.6595ZM7.93549 14.2636C6.6839 14.2636 5.46042 13.8925 4.41976 13.1971C3.37911 12.5018 2.56801 11.5135 2.08905 10.3572C1.61009 9.20084 1.48477 7.92847 1.72895 6.70093C1.97312 5.47339 2.57581 4.34583 3.46082 3.46082C4.34583 2.57581 5.47339 1.97312 6.70093 1.72895C7.92847 1.48477 9.20084 1.61009 10.3572 2.08905C11.5135 2.56801 12.5018 3.37911 13.1971 4.41976C13.8925 5.46042 14.2636 6.6839 14.2636 7.93549C14.2617 9.61323 13.5944 11.2217 12.4081 12.4081C11.2217 13.5944 9.61323 14.2617 7.93549 14.2636Z"
+							fill="white" />
+						<path
+							d="M18.778 17.6595L34.1228 2.83894L33.994 2.70559L33.8629 2.57451L18.778 17.6595ZM14.0564 12.9379L-2.45908 -0.565863L-14.6758 14.3756L-1.02857 28.0228L14.0564 12.9379ZM12.9379 14.0564L28.0228 -1.02857L14.3756 -14.6758L-0.565863 -2.45908L12.9379 14.0564ZM17.6595 18.778L2.57451 33.8629L2.70559 33.994L2.83894 34.1228L17.6595 18.778ZM7.93549 14.2636V35.597H7.94747L7.95945 35.5969L7.93549 14.2636ZM14.2636 7.93549L35.5969 7.95945L35.597 7.94747V7.93549H14.2636ZM33.8629 2.57451L29.1413 -2.14707L-1.02857 28.0228L3.69301 32.7444L33.8629 2.57451ZM30.5718 26.4416C35.3231 20.6307 37.6591 13.2159 37.0968 5.73085L-5.44999 8.92759C-5.70778 5.49659 -4.63698 2.09777 -2.45908 -0.565863L30.5718 26.4416ZM37.0968 5.73085C36.5344 -1.75415 33.1166 -8.73666 27.5504 -13.7724L-1.07409 17.8675C-3.62555 15.5592 -5.1922 12.3586 -5.44999 8.92759L37.0968 5.73085ZM27.5504 -13.7724C21.9841 -18.8081 14.6953 -21.5118 7.19156 -21.3242L8.25803 21.3291C4.81844 21.4151 1.47737 20.1758 -1.07409 17.8675L27.5504 -13.7724ZM7.19156 -21.3242C-0.312196 -21.1366 -7.45679 -18.072 -12.7644 -12.7644L17.4055 17.4055C14.9726 19.8384 11.6976 21.2431 8.25803 21.3291L7.19156 -21.3242ZM-12.7644 -12.7644C-18.072 -7.45679 -21.1366 -0.312196 -21.3242 7.19156L21.3291 8.25803C21.2431 11.6976 19.8384 14.9726 17.4055 17.4055L-12.7644 -12.7644ZM-21.3242 7.19156C-21.5118 14.6953 -18.8081 21.9841 -13.7724 27.5504L17.8675 -1.07409C20.1758 1.47737 21.4151 4.81844 21.3291 8.25803L-21.3242 7.19156ZM-13.7724 27.5504C-8.73666 33.1166 -1.75415 36.5344 5.73085 37.0968L8.92759 -5.44999C12.3586 -5.1922 15.5592 -3.62555 17.8675 -1.07409L-13.7724 27.5504ZM5.73085 37.0968C13.2159 37.6591 20.6307 35.3231 26.4416 30.5718L-0.565863 -2.45908C2.09777 -4.63698 5.49659 -5.70778 8.92759 -5.44999L5.73085 37.0968ZM-2.14707 29.1413L2.57451 33.8629L32.7444 3.69301L28.0228 -1.02857L-2.14707 29.1413ZM2.83894 34.1228C7.01164 38.1529 12.6003 40.3829 18.4012 40.3325L18.0305 -2.33256C23.4166 -2.37936 28.6056 -0.308819 32.48 3.43314L2.83894 34.1228ZM18.4012 40.3325C24.2022 40.2821 29.7513 37.9553 33.8533 33.8533L3.68337 3.68337C7.49206 -0.125316 12.6443 -2.28575 18.0305 -2.33256L18.4012 40.3325ZM33.8533 33.8533C37.9553 29.7513 40.2821 24.2022 40.3325 18.4012L-2.33256 18.0305C-2.28575 12.6443 -0.125316 7.49206 3.68337 3.68337L33.8533 33.8533ZM40.3325 18.4012C40.3829 12.6003 38.1529 7.01164 34.1228 2.83894L3.43314 32.48C-0.308819 28.6056 -2.37936 23.4166 -2.33256 18.0305L40.3325 18.4012ZM7.93549 -7.06971C10.9032 -7.06971 13.8043 -6.18967 16.2719 -4.54088L-7.4324 30.9352C-2.8835 33.9746 2.46456 35.597 7.93549 35.597V-7.06971ZM16.2719 -4.54088C18.7395 -2.89209 20.6628 -0.548594 21.7985 2.19324L-17.6204 18.5211C-15.5267 23.5755 -11.9813 27.8957 -7.4324 30.9352L16.2719 -4.54088ZM21.7985 2.19324C22.9342 4.93509 23.2313 7.95213 22.6524 10.8629L-19.1945 2.539C-20.2618 7.9048 -19.714 13.4666 -17.6204 18.5211L21.7985 2.19324ZM22.6524 10.8629C22.0734 13.7736 20.6443 16.4473 18.5458 18.5458L-11.6241 -11.6241C-15.4927 -7.7556 -18.1271 -2.8268 -19.1945 2.539L22.6524 10.8629ZM18.5458 18.5458C16.4473 20.6443 13.7736 22.0734 10.8629 22.6524L2.539 -19.1945C-2.8268 -18.1271 -7.7556 -15.4927 -11.6241 -11.6241L18.5458 18.5458ZM10.8629 22.6524C7.95213 23.2313 4.93509 22.9342 2.19324 21.7985L18.5211 -17.6204C13.4666 -19.714 7.9048 -20.2618 2.539 -19.1945L10.8629 22.6524ZM2.19324 21.7985C-0.548594 20.6628 -2.89209 18.7395 -4.54088 16.2719L30.9352 -7.4324C27.8957 -11.9813 23.5755 -15.5267 18.5211 -17.6204L2.19324 21.7985ZM-4.54088 16.2719C-6.18967 13.8043 -7.06971 10.9032 -7.06971 7.93549H35.597C35.597 2.46456 33.9746 -2.8835 30.9352 -7.4324L-4.54088 16.2719ZM-7.0697 7.91153C-7.06524 3.93962 -5.48543 0.131681 -2.67687 -2.67687L27.493 27.493C32.6743 22.3118 35.5887 15.2868 35.5969 7.95945L-7.0697 7.91153ZM-2.67687 -2.67687C0.131681 -5.48543 3.93962 -7.06524 7.91153 -7.0697L7.95945 35.5969C15.2868 35.5887 22.3118 32.6743 27.493 27.493L-2.67687 -2.67687Z"
+							fill="white"
+							mask="url(#path-1-inside-1_451_1269)" />
+					</svg>
+				</form>
+				<h5 class="mobile-menu__title">Навигация</h5>
+				<ul class="mobile-menu__nav">
+					<a href="" class="nav__item">Главная</a>
+					<div class="submenu">
+						<a href="" class="nav__item submenu__title">Компания</a>
+						<div class="submenu__container for-nested">
+							<a href="" class="submenu__link">О нас</a>
+							<a href="" class="submenu__link">Миссия и ценности</a>
+							<a href="" class="submenu__link">Проекты</a>
+							<a href="" class="submenu__link">Политика качества</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Производство</a>
+								<div class="submenu-nested__container for-nested">
+									<div class="submenu-nested">
+										<a href="" class="submenu__link submenu-nested_link">Коллектив</a>
+										<div class="submenu-nested__container for-nested">
+											<a href="" class="submenu__link">Коллектив</a>
+											<a href="" class="submenu__link">Вакансии</a>
+										</div>
+									</div>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+							<a href="" class="submenu__link">Сертификаты</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Персонал</a>
+								<div class="submenu-nested__container for-nested">
+									<a href="" class="submenu__link">Коллектив</a>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="submenu">
+						<a href="" class="nav__item submenu__title">Продукция</a>
+						<div class="submenu__container for-nested">
+							<a href="" class="submenu__link">О нас</a>
+							<a href="" class="submenu__link">Миссия и ценности</a>
+							<a href="" class="submenu__link">Проекты</a>
+							<a href="" class="submenu__link">Политика качества</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Производство</a>
+								<div class="submenu-nested__container for-nested">
+									<div class="submenu-nested">
+										<a href="" class="submenu__link submenu-nested_link">Коллектив</a>
+										<div class="submenu-nested__container for-nested">
+											<a href="" class="submenu__link">Коллектив</a>
+											<a href="" class="submenu__link">Вакансии</a>
+										</div>
+									</div>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+							<a href="" class="submenu__link">Сертификаты</a>
+							<div class="submenu-nested">
+								<a href="" class="submenu__link submenu-nested_link">Персонал</a>
+								<div class="submenu-nested__container for-nested">
+									<a href="" class="submenu__link">Коллектив</a>
+									<a href="" class="submenu__link">Вакансии</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="" class="nav__item">Партнерство</a>
+					<a href="" class="nav__item">Материалы</a>
+					<a href="" class="nav__item">Новости</a>
+					<a href="" class="nav__item">Контакты</a>
+				</ul>
+				<a href="tel:+998 (55) 514-90-00" class="mobile-menu__phone">+998 (55) 514-90-00</a>
+				<a href="tel:+998 (55) 902-90-00" class="mobile-menu__phone">+998 (55) 902-90-00</a>
+				<a href="mailto:info@yes-cable.uz" class="mobile-menu__mail">info@yes-cable.uz</a>
+				<span class="mobile-menu__time">График работы: Пн-Пт: 8:00-17:00</span>
+				<div class="socmedia">
+					<a href="" class="socmedia__item mobile__socmedia__item"><img src="./assets/icons/socmedia-1.svg" alt="" /></a>
+					<a href="" class="socmedia__item mobile__socmedia__item"><img src="./assets/icons/socmedia-2.svg" alt="" /></a>
+					<a href="" class="socmedia__item mobile__socmedia__item"><img src="./assets/icons/socmedia-3.svg" alt="" /></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- header end  -->
+
+		<div class="calculator-page">
+			<div class="breackpoints">
+				<a href="" class="breackpoints__link">Главная</a>
+				<a href="" class="breackpoints__link">Кабельно-проводниковая продукция</a>
+			</div>
+			<div class="calculator-page__content">
+				<h6 class="page-title">Калькулятор веса шины</h6>
+				<p class="sub">Расчет по характеристикам</p>
+				<div class="calculator-page__cards">
+					<div class="calculator-page__card">
+						<label class="calculator-page__card__title">Размер шины</label>
+						<div class="calculator-page__card__item w-d">
+							<div class="flex-center current">
+								<input type="text" value="Выбрать размер" disabled />
+							</div>
+							<div class="dropdown">
+								<a href="" class="sub-secondary dropdown__item">1</a>
+								<a href="" class="sub-secondary dropdown__item">2</a>
+								<a href="" class="sub-secondary dropdown__item">3</a>
+								<a href="" class="sub-secondary dropdown__item">3</a>
+								<a href="" class="sub-secondary dropdown__item">3</a>
+							</div>
+						</div>
+					</div>
+					<div class="calculator-page__card">
+						<label class="calculator-page__card__title">Длина шины</label>
+						<div class="calculator-page__card__item w-d">
+							<div class="flex-center current">
+								<input type="text" value="Выбрать длину" disabled />
+							</div>
+							<div class="dropdown">
+								<a href="" class="sub-secondary dropdown__item">1</a>
+								<a href="" class="sub-secondary dropdown__item">2</a>
+								<a href="" class="sub-secondary dropdown__item">3</a>
+								<a href="" class="sub-secondary dropdown__item">3</a>
+							</div>
+						</div>
+					</div>
+					<a href="" class="calculator-page__btn">Рассчитать вес шины</a>
+				</div>
+				<div class="weight">Вес кабеля: 200 г</div>
+			</div>
+		</div>
+
+		<!-- footer start -->
+		<footer>
+			<div class="contact">
+				<div class="contact__content">
+					<h3 class="contact__title">Свяжитесь <span>с нами</span></h3>
+					<span class="span-text">КОНТАКТЫ</span>
+					<p class="sub">Для приобретения продукции, а также по вопросам сотрудничества и получения консультаций, свяжитесь с нами:</p>
+					<div class="flex-start contact__phone__container">
+						<div class="flex-col-start">
+							<span class="phone__title">Приобретение продукции</span>
+							<a href="tel:+998 (55) 514-90-00" class="contact__phone">+998 (55) 902-90-00</a>
+						</div>
+						<div class="flex-col-start">
+							<span class="phone__title">Вопросы сотрудничества</span>
+							<a href="tel:+998 (55) 514-90-00" class="contact__phone">+998 (55) 514-90-00</a>
+						</div>
+					</div>
+					<a href="mailto:info@yes-cable.uz" class="contact__mail">info@yes-cable.uz</a>
+					<p class="contact__law">Ташкентская область, Юкоричирчикский район, поселок Барданкуль, махалля «Хван»</p>
+					<p class="contact__company">YES CABLE | Узбекистан</p>
+					<span class="contact__time">Пн-Пт: 8:00-17:00</span>
+				</div>
+				<form>
+					<h5 class="form__title">Форма обратной связи</h5>
+					<input type="text" class="input__name" placeholder="Имя" />
+					<input type="text" class="input__phone" placeholder="Номер" />
+					<textarea type="text" class="input__comment" placeholder="Комментарий"></textarea>
+					<a href="" class="form__btn">Оставить заявку →</a>
+					<div class="sub-secondary">Нажимая на кнопку, вы соглашаетесь на обработку ваших персональных данных.</div>
+				</form>
+			</div>
+			<div class="footer">
+				<div class="footer__navbar">
+					<div class="flex-col-start navbar__item">
+						<h5 class="navbar__title">КОМПАНИЯ</h5>
+						<ul class="navbar__list">
+							<li class="list__item"><a href="">О нас</a></li>
+							<li class="list__item"><a href="">Миссия и ценности</a></li>
+							<li class="list__item"><a href="">Проекты</a></li>
+							<li class="list__item"><a href="">Производство</a></li>
+							<li class="list__item"><a href="">Сертификаты</a></li>
+							<li class="list__item"><a href="">Коллектив</a></li>
+							<li class="list__item"><a href="">Вакансии</a></li>
+							<li class="list__item"><a href="">Новости</a></li>
+						</ul>
+					</div>
+					<div class="flex-col-start navbar__item">
+						<h5 class="navbar__title">ПРОДУКЦИЯ</h5>
+						<ul class="navbar__list">
+							<li class="list__item"><a href="">Каталог</a></li>
+							<li class="list__item"><a href="">Заказ продукции</a></li>
+							<li class="list__item"><a href="">Точки продаж</a></li>
+							<li class="list__item"><a href="">Калькулятор расчета метража кабеля</a></li>
+							<li class="list__item"><a href="">Калькулятор веса по характеристикам кабеля</a></li>
+							<li class="list__item"><a href="">Лаборатория</a></li>
+							<li class="list__item"><a href="">Коллектив</a></li>
+							<li class="list__item"><a href="">Коллектив</a></li>
+						</ul>
+					</div>
+					<div class="flex-col-start navbar__item">
+						<h5 class="navbar__title">МАТЕРИАЛЫ</h5>
+						<ul class="navbar__list">
+							<li class="list__item"><a href="">Как стать дилером</a></li>
+							<li class="list__item"><a href="">Крупные клиенты и партнеры</a></li>
+							<li class="list__item"><a href="">Справочные и познавательные материалы</a></li>
+							<li class="list__item"><a href="">Политика качества</a></li>
+						</ul>
+					</div>
+					<div class="flex-col-start navbar__item">
+						<h5 class="navbar__title">КОНТАКТЫ</h5>
+						<ul class="navbar__list">
+							<li class="list__item"><a href="mailto:info@yes-cable.uz">info@yes-cable.uz</a></li>
+							<li class="list__item socmedia">
+								<a href="" class="socmedia__item"><img src="./assets/icons/socmedia-1.svg" alt="" /></a>
+								<a href="" class="socmedia__item"><img src="./assets/icons/socmedia-2.svg" alt="" /></a>
+								<a href="" class="socmedia__item"><img src="./assets/icons/socmedia-3.svg" alt="" /></a>
+							</li>
+							<li class="list__item"><!--Не убирать--></li>
+							<li class="list__item"><!--Не убирать--></li>
+							<li class="list__item flex-col-start">
+								<strong>Приобретение продукции:</strong>
+								<a href="tel:+998 (55) 902-90-00">+998 (55) 902-90-00</a>
+							</li>
+							<li class="list__item flex-col-start">
+								<strong>Вопросы сотрудничества:</strong>
+								<a href="tel:+998 (55) 514-90-00"> +998 (55) 514-90-00</a>
+							</li>
+							<li class="list__item">
+								<strong>Адрес:</strong>
+								Ташкентская область, Юкоричирчикский район, поселок Барданкуль, махалля «Хван». Наш индекс 111902
+							</li>
+							<li class="list__item"><strong>Пн-Пт: 8:00-17:00</strong></li>
+						</ul>
+					</div>
+				</div>
+				<div class="flex-col-start footer__map">
+					<li class="map__title">Расположение</li>
+					<iframe
+						src="https://yandex.ru/map-widget/v1/?um=constructor%3Aaa3981be501e8b5fc5da3852f863d9beceef83df600a5a39e35a7a44d080fc6d&amp;source=constructor"
+						width="1280"
+						height="400"
+						class="map"></iframe>
+				</div>
+				<a href="" class="footer__logo"><img src="./assets/imgs/footer-logo.svg" alt="" /></a>
+				<a href="" class="icorp" target="_blank">Разработано iCORP</a>
+				<p class="company-name">
+					«YUQORICHIRCHIQ ENERGY SYSTEMS»<br />
+					Кабельно-проводниковая продукция
+				</p>
+				<span class="rights">© 2024 | Все права защищены</span>
+			</div>
+		</footer>
+		<!-- footer end -->
+	</body>
+</html>
