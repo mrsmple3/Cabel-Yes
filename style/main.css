@@ -1314,7 +1314,6 @@ main .flex-center .catalog__btn::after {
 
 .about {
   position: relative;
-  overflow: hidden;
 }
 .about .about__fon {
   position: absolute;
@@ -1324,21 +1323,11 @@ main .flex-center .catalog__btn::after {
   z-index: -1;
 }
 .about .about__container {
-  width: 100%;
-  padding-right: calc(5 * (1vw + 1vh));
-  padding-left: calc(5 * (1vw + 1vh));
   padding-top: calc(5.0833333333 * (1vw + 1vh));
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding-right: 0;
-  gap: calc(1.6666666667 * (1vw + 1vh));
-}
-@media screen and (max-width: 1050px) {
-  .about .about__container {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
 }
 @media screen and (max-width: 1050px) {
   .about .about__container {
@@ -1349,11 +1338,21 @@ main .flex-center .catalog__btn::after {
   }
 }
 .about .about__content {
-  width: calc(26.75 * (1vw + 1vh));
+  width: 100%;
+  padding-right: calc(5 * (1vw + 1vh));
+  padding-left: calc(5 * (1vw + 1vh));
+  padding-right: calc(2.0833333333 * (1vw + 1vh));
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: calc(4.4583333333 * (1vw + 1vh));
+}
+@media screen and (max-width: 1050px) {
+  .about .about__content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 @media screen and (max-width: 1050px) {
   .about .about__content {
@@ -1504,8 +1503,13 @@ main .flex-center .catalog__btn::after {
   color: white;
 }
 .about .about__img {
-  width: calc(32.0833333333 * (1vw + 1vh));
-  height: calc(31.2083333333 * (1vw + 1vh));
+  width: 49.6%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  justify-content: end;
+  overflow: hidden;
 }
 .about .about__img img {
   height: -moz-max-content;
@@ -1537,6 +1541,7 @@ main .flex-center .catalog__btn::after {
   width: 100%;
   padding-right: calc(5 * (1vw + 1vh));
   padding-left: calc(5 * (1vw + 1vh));
+  width: 50%;
   padding-top: calc(4.5 * (1vw + 1vh));
   padding-bottom: calc(5.5 * (1vw + 1vh));
 }
@@ -1544,6 +1549,11 @@ main .flex-center .catalog__btn::after {
   .quality .quality__content {
     padding-right: 20px;
     padding-left: 20px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .quality .quality__content {
+    width: 100%;
   }
 }
 .quality .quality__title {
@@ -1556,6 +1566,7 @@ main .flex-center .catalog__btn::after {
   width: 100%;
   padding-right: calc(5 * (1vw + 1vh));
   padding-left: calc(5 * (1vw + 1vh));
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1573,6 +1584,7 @@ main .flex-center .catalog__btn::after {
 }
 @media screen and (max-width: 1050px) {
   .quality .quality__benefits {
+    width: 100%;
     padding-left: 0;
     padding-right: 0;
     gap: 69px;
