@@ -1314,6 +1314,7 @@ main .flex-center .catalog__btn::after {
 
 .about {
   position: relative;
+  overflow: hidden;
 }
 .about .about__fon {
   position: absolute;

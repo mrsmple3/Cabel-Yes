@@ -1160,6 +1160,7 @@ main {
 //!about
 .about {
 	position: relative;
+	overflow: hidden;
 	.about__fon {
 		position: absolute;
 		inset: 0;
