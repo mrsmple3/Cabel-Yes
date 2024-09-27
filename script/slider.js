@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		minWidthMobile = window.innerWidth < 1025 ? false : true;
 		updateSlider(sliderMainImgs, ".swiper.main__slider");
 		updateSlider(sliderRecommendation, ".swiper.recommendation__slider");
-		updateSlider(sliderOffer, ".offer__slider .swiper");
+		updateSlider(sliderOfferProduct, ".offer__slider .swiper");
 		updateSlider(sliderCertificate, ".swiper.certificates-page__slider");
 	});
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		loop: true,
 	});
 
-	const sliderOffer = new Swiper(".offer__slider .swiper", {
+	const sliderOfferProduct = new Swiper(".swiper.offer__slider__container", {
 		navigation: {
 			nextEl: ".offer__slider__prev",
 			prevEl: ".offer__slider__next",
@@ -60,6 +60,32 @@ document.addEventListener("DOMContentLoaded", function () {
 		speed: 1300,
 		spaceBetween: minWidthMobile ? size(10) : 10,
 	});
+
+	function handleOfferProduct() {
+		// Выбираем элемент, который будет изменяться (главное изображение)
+		const mainImage = document.querySelector(".catalog-products-img");
+
+		// По умолчанию устанавливаем первое изображение слайда
+		const firstSlideImageSrc = document.querySelector(".offer__slider__item img").getAttribute("src");
+		mainImage.setAttribute("src", firstSlideImageSrc);
+
+		// Добавляем обработчик клика на каждый слайд
+		const productSlides = document.querySelectorAll(".offer__slider__item");
+
+		productSlides.forEach((slide) => {
+			slide.addEventListener("click", function () {
+				const newImageSrc = this.querySelector("img").getAttribute("src");
+				productSlides.forEach((slide) => {
+					slide.classList.remove("active");
+				});
+				slide.classList.add("active");
+				// Меняем изображение
+				mainImage.setAttribute("src", newImageSrc);
+			});
+		});
+	}
+
+	handleOfferProduct();
 
 	const sliderCertificate = new Swiper(".swiper.certificates-page__slider", {
 		navigation: {

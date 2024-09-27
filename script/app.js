@@ -118,6 +118,12 @@
 		);
 
 		//!Header
+		// Загрузка хедера
+		$("#header__container").load("./header.html");
+
+		// Загрузка футера
+		// $("footer").load("./footer.html");
+
 		if ($minWidthMobile) {
 			gsap.to("header", {
 				boxShadow: "0px 4px 50px rgba(0, 0, 0, 0.07)",
@@ -411,19 +417,5 @@
 				});
 			}
 		});
-
-		function catalogSelect() {
-			$(".filter__item").click(function () {
-				$(this).toggleClass("active");
-				$(".filter__item").not(this).removeClass("active");
-			});
-
-			$(".select__option").click(function () {
-				var selectedOption = $(this).text();
-				$(this).closest(".filter__item").find(".select__label").text(selectedOption);
-			});
-		}
-
-		catalogSelect();
 	});
 })(jQuery);

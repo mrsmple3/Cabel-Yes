@@ -447,7 +447,7 @@ header {
 		background-color: white;
 		border-radius: 5px;
 		overflow: hidden;
-		z-index: 6;
+		z-index: 15;
 		&::-webkit-scrollbar {
 			width: 3px;
 		}
@@ -1849,23 +1849,7 @@ main {
 			line-height: 22.4px;
 		}
 	}
-	.partners__container {
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(size(238px), 1fr));
-		gap: 25px;
-		margin-bottom: size(63px);
-	}
-	.partners__item {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: size(25.5px) size(75px);
-		background-color: white;
-		border-radius: 5px;
-		@media screen and (max-width: 1050px) {
-		}
-	}
+
 	.partners__link {
 		color: #e1aa00;
 		font-size: size(17px);
@@ -1884,6 +1868,24 @@ main {
 			width: 87px;
 			height: 87px;
 		}
+	}
+}
+
+.partners__container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(size(238px), 1fr));
+	gap: 25px;
+	margin-bottom: size(63px);
+}
+.partners__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: size(25.5px) size(75px);
+	background-color: white;
+	border-radius: 5px;
+	@media screen and (max-width: 1050px) {
 	}
 }
 
@@ -3089,7 +3091,7 @@ footer {
 				height: 8.5px;
 			}
 		}
-		.swiper-slide {
+		.offer__slider__item {
 			width: 100%;
 			height: size(110px);
 			border-radius: 5px;
@@ -3287,6 +3289,12 @@ footer {
 		padding-bottom: size(145px);
 		background-color: white;
 		border-radius: 5px;
+		transition: all 0.5s;
+		//inactive
+		display: none;
+		&.active {
+			display: flex;
+		}
 		@media screen and (max-width: 1050px) {
 			@include main-container();
 			padding-top: 54px;
@@ -3445,7 +3453,8 @@ footer {
 .text-content-subs,
 .text-content__subs {
 	@include flex-col-start();
-	h6 {
+	h6,
+	.text-content__title {
 		font-size: size(20px);
 		font-weight: 400;
 		color: $main-color;
@@ -3457,8 +3466,10 @@ footer {
 		color: #3e3e3e;
 		font-size: size(15px);
 		font-weight: 400;
+		line-height: size(24px);
 		@media screen and (max-width: 1050px) {
 			font-size: 15px;
+			line-height: 20px;
 		}
 	}
 	ul {
@@ -3474,6 +3485,13 @@ footer {
 		@media screen and (max-width: 1050px) {
 			margin-left: 20px;
 		}
+	}
+	.list__title {
+		color: #af880f;
+		font-size: size(16px);
+		font-weight: 400;
+		font-style: italic;
+		font-weight: 500;
 	}
 }
 
@@ -3860,5 +3878,207 @@ footer {
 		.text-content-sub {
 			color: #5f5f5f;
 		}
+	}
+}
+
+//!Politics
+.politics-page {
+	.politics-page__container {
+		@include main-container();
+		margin-bottom: size(155px);
+	}
+	.page-title {
+		margin-bottom: size(62px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 47px;
+		}
+	}
+}
+
+//!Laboratory
+.laboratory-page {
+	.page-title {
+		margin-bottom: size(62px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 47px;
+		}
+	}
+	.laboratory-page__container {
+		@include main-container();
+		margin-bottom: size(130px);
+	}
+	.laboratory__end {
+		width: 100%;
+		padding-top: size(68px);
+		padding-bottom: size(59px);
+		@include flex-end();
+		@media screen and (max-width: 1050px) {
+			@include flex-col-start();
+		}
+	}
+	li {
+		&::marker {
+			color: #5f5f5f;
+		}
+	}
+	.laboratory__end__content {
+		width: size(779px);
+		@media screen and (max-width: 1050px) {
+			width: 100%;
+		}
+	}
+	.politics__img__container {
+		position: relative;
+		width: size(397px);
+		@include flex-col-center();
+		gap: size(33.5px);
+		&::before {
+			content: "";
+			width: 100%;
+			height: size(10px);
+			background-image: url(../assets/icons/line.svg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	.politics__img {
+		width: 100%;
+		height: size(607px);
+		border-radius: 10px;
+		@media screen and (max-width: 1050px) {
+			height: max-content;
+			max-height: 372px;
+		}
+	}
+}
+
+//!Leader
+.leader-page {
+	.leader-page__container {
+		@include main-container();
+		@include flex-start();
+		margin-bottom: size(170px);
+		@media screen and (max-width: 1050px) {
+			@include flex-col-start();
+		}
+	}
+	.leader-page__content {
+		width: size(610px);
+		@include flex-col-start();
+		@media screen and (max-width: 1050px) {
+			width: 100%;
+		}
+	}
+	.page-title {
+		margin-bottom: size(62px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 47px;
+		}
+	}
+	.text-content-sub {
+		color: #5f5f5f;
+	}
+	.phone {
+		color: #637388;
+		font-size: size(20px);
+		font-weight: 600;
+		line-height: size(30px);
+	}
+	li {
+		margin-left: size(8px);
+	}
+	.leader__img__container {
+		width: size(489px);
+		height: 100%;
+	}
+	.leader__img {
+		border-radius: 10px;
+	}
+}
+
+//!Production
+.production-page__container {
+	@include main-container();
+	margin-bottom: size(170px);
+	.page-title {
+		margin-bottom: size(69px);
+	}
+	.news__cards__title {
+		font-weight: bold;
+	}
+}
+
+.partners-page__container {
+	@include main-container();
+	@include flex-col-start();
+	margin-bottom: size(200px);
+	.page-title {
+		margin-bottom: size(60px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 45px;
+		}
+	}
+	.text-content-sub {
+		color: #5f5f5f;
+		font-size: size(16px);
+		font-family: Onest;
+		font-weight: 400;
+		line-height: size(24px);
+		word-wrap: break-word;
+		margin-bottom: size(71px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 16px;
+			line-height: 24px;
+			margin-bottom: 56px;
+		}
+	}
+}
+
+//!Collective
+.collective-page__container {
+	@include main-container();
+	@include flex-col-start();
+	margin-bottom: size(176px);
+	.page-title {
+		margin-bottom: size(60px);
+	}
+	.collective-page__content {
+		width: 100%;
+		@include flex-start();
+		@media screen and (max-width: 1050px) {
+			@include flex-start();
+			gap: 55px;
+		}
+		.text-content__subs {
+			width: size(587px);
+		}
+	}
+	.collective__img {
+		width: size(635px);
+		height: 100%;
+		border-radius: 10px;
+	}
+}
+
+//!Get product
+.get-product-page__container {
+	@include main-container();
+	@include flex-col-start();
+	margin-bottom: size(127px);
+	@media screen and (max-width: 1050px) {
+		margin-bottom: 152px;
+	}
+	.page-title {
+		margin-bottom: size(62px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 47px;
+		}
+	}
+	.text-content-sub {
+		color: #5f5f5f;
+	}
+	strong.text-content-sub {
+		font-weight: 600;
 	}
 }

@@ -19,7 +19,7 @@
 						opacity: 1,
 						y: 0,
 						duration: 0.3,
-						delay: index * 0.2, // задержка появления для каждого элемента
+						delay: (index + 1) * 0.3, // задержка появления для каждого элемента
 					}
 				);
 			});
@@ -65,5 +65,49 @@
 			mainContainer.find("input").val(selectedValue);
 			mainContainer.removeClass("active");
 		});
+
+		function catalogSelect() {
+			$(".filter__item").click(function () {
+				$(this).toggleClass("active");
+				$(".filter__item").not(this).removeClass("active");
+			});
+
+			$(".select__option").click(function () {
+				var selectedOption = $(this).text();
+				$(this).closest(".filter__item").find(".select__label").text(selectedOption);
+			});
+		}
+
+		catalogSelect();
+
+		function handleTabs($tabs, $tabsContent) {
+			let $tabFlag = true;
+
+			$tabs.each(function (index) {
+				const currentTabContent = $tabsContent.eq(index);
+				//activate tab with class "active"
+				if ($(this).hasClass("active")) {
+					currentTabContent.addClass("active");
+				}
+				$(this).click(function () {
+					if (currentTabContent && $tabFlag) {
+						//inactivate all tabs
+						$tabs.removeClass("active");
+						$tabsContent.removeClass("active");
+						//activate
+						$(this).addClass("active");
+						currentTabContent.addClass("active");
+
+						$tabFlag = false; //stop handle
+
+						setTimeout(() => {
+							$tabFlag = true;
+						}, 500);
+					}
+				});
+			});
+		}
+
+		handleTabs($(".tabs__btns .tabs__btn"), $(".tabs__content"));
 	});
 })(jQuery);
