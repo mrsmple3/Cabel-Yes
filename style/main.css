@@ -247,6 +247,14 @@ h5 {
   height: calc(1.2004166667 * (1vw + 1vh));
   cursor: pointer;
 }
+@media screen and (max-width: 1050px) {
+  .popup #popup__close {
+    width: 28.8px;
+    height: 28.8px;
+    top: 13px;
+    right: 17px;
+  }
+}
 .popup .popup__container {
   position: relative;
   width: calc(23.125 * (1vw + 1vh));
@@ -262,11 +270,13 @@ h5 {
 @media screen and (max-width: 1050px) {
   .popup .popup__container {
     width: 555px;
+    padding: 50px 45px;
+    padding-bottom: 45px;
   }
 }
 @media screen and (max-width: 550px) {
   .popup .popup__container {
-    width: 80%;
+    width: 90%;
   }
 }
 .popup .popup__title {
@@ -292,6 +302,8 @@ h5 {
 }
 @media screen and (max-width: 1050px) {
   .popup .popup__product {
+    font-size: 12px;
+    line-height: 20px;
     margin-bottom: 28px;
   }
 }
@@ -310,6 +322,9 @@ h5 {
 }
 @media screen and (max-width: 1050px) {
   .popup input {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 17px 14px;
     margin-bottom: 17.5px;
   }
 }
@@ -356,6 +371,12 @@ h5 {
   font-weight: 600;
   line-height: calc(0.6666666667 * (1vw + 1vh));
   word-wrap: break-word;
+}
+@media screen and (max-width: 1050px) {
+  .popup .popup__sub {
+    font-size: 15px;
+    line-height: 16px;
+  }
 }
 
 header {
