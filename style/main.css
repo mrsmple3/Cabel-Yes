@@ -69,7 +69,8 @@ h2 {
   }
 }
 
-h3 {
+h3,
+.popup__title {
   color: black;
   font-size: calc(1.5 * (1vw + 1vh));
   font-family: Onest;
@@ -77,11 +78,13 @@ h3 {
   line-height: calc(1.65 * (1vw + 1vh));
   word-wrap: break-word;
 }
-h3 span {
+h3 span,
+.popup__title span {
   color: rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 1050px) {
-  h3 {
+  h3,
+  .popup__title {
     width: 100%;
     font-size: 28px;
     line-height: 30.8px;
@@ -216,6 +219,143 @@ h5 {
 .flex-stretch {
   display: flex;
   align-items: stretch;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  transition: all 0.5s;
+}
+.popup.active {
+  visibility: visible;
+  opacity: 1;
+}
+.popup #popup__close {
+  position: absolute;
+  top: calc(0.5416666667 * (1vw + 1vh));
+  right: calc(0.7083333333 * (1vw + 1vh));
+  width: calc(1.2004166667 * (1vw + 1vh));
+  height: calc(1.2004166667 * (1vw + 1vh));
+  cursor: pointer;
+}
+.popup .popup__container {
+  position: relative;
+  width: calc(23.125 * (1vw + 1vh));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(2.0833333333 * (1vw + 1vh)) calc(1.875 * (1vw + 1vh));
+  padding-bottom: calc(2.7083333333 * (1vw + 1vh));
+  background-color: white;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1050px) {
+  .popup .popup__container {
+    width: 555px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .popup .popup__container {
+    width: 80%;
+  }
+}
+.popup .popup__title {
+  width: 100%;
+  text-align: center;
+  color: #f8ba00;
+  margin-bottom: calc(0.9166666667 * (1vw + 1vh));
+}
+@media screen and (max-width: 1050px) {
+  .popup .popup__title {
+    margin-bottom: 23px;
+  }
+}
+.popup .popup__product {
+  width: 100%;
+  text-align: center;
+  color: rgba(69, 69, 69, 0.7);
+  font-size: calc(0.5 * (1vw + 1vh));
+  font-weight: 400;
+  line-height: calc(0.8333333333 * (1vw + 1vh));
+  word-wrap: break-word;
+  margin-bottom: calc(1.1666666667 * (1vw + 1vh));
+}
+@media screen and (max-width: 1050px) {
+  .popup .popup__product {
+    margin-bottom: 28px;
+  }
+}
+.popup input {
+  width: 100%;
+  padding: calc(0.5833333333 * (1vw + 1vh)) calc(0.8333333333 * (1vw + 1vh));
+  color: rgba(139, 139, 139, 0.7);
+  font-size: calc(0.6666666667 * (1vw + 1vh));
+  font-weight: 400;
+  line-height: calc(0.8333333333 * (1vw + 1vh));
+  word-wrap: break-word;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  border-radius: 5px;
+  margin-bottom: calc(0.7291666667 * (1vw + 1vh));
+  outline: none;
+}
+@media screen and (max-width: 1050px) {
+  .popup input {
+    margin-bottom: 17.5px;
+  }
+}
+.popup .popup__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(0.5416666667 * (1vw + 1vh)) calc(4.1666666667 * (1vw + 1vh));
+  background-color: #f8ba00;
+  border-radius: 5px;
+  border: 1px solid #f8ba00;
+  color: white;
+  font-size: calc(0.8333333333 * (1vw + 1vh));
+  font-family: Onest;
+  font-weight: 400;
+  line-height: calc(0.9166666667 * (1vw + 1vh));
+  word-wrap: break-word;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: calc(1.0833333333 * (1vw + 1vh));
+}
+@media screen and (max-width: 1050px) {
+  .popup .popup__btn {
+    font-size: 20px;
+    line-height: 22px;
+    padding: 13px 100px;
+  }
+}
+.popup .popup__btn:hover {
+  background-color: white;
+  color: #f8ba00;
+  border-color: #f8ba00;
+}
+@media screen and (max-width: 1050px) {
+  .popup .popup__btn {
+    margin-bottom: 26px;
+  }
+}
+.popup .popup__sub {
+  text-align: center;
+  color: rgba(107, 107, 107, 0.6);
+  font-size: calc(0.625 * (1vw + 1vh));
+  font-weight: 600;
+  line-height: calc(0.6666666667 * (1vw + 1vh));
+  word-wrap: break-word;
 }
 
 header {
@@ -1314,6 +1454,7 @@ main .flex-center .catalog__btn::after {
 }
 
 .about {
+  width: 100vw;
   position: relative;
 }
 .about .about__fon {
@@ -1504,7 +1645,7 @@ main .flex-center .catalog__btn::after {
   color: white;
 }
 .about .about__img {
-  width: 49.6%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: flex-end;

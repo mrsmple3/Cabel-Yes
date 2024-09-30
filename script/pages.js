@@ -56,6 +56,11 @@
 			if (!$(e.target).closest(".calculator-page__card__item.w-d").length) {
 				$(".calculator-page__card__item.w-d").removeClass("active");
 			}
+
+			// Проверяем, произошел ли клик вне popup, чтобы закрыть его
+			if (!$(e.target).closest(".popup .popup__container").length && !$(e.target).hasClass("call-popup")) {
+				$(".popup").removeClass("active");
+			}
 		});
 
 		$(".calculator-page__card__item.w-d .dropdown__item").on("click", function (event) {
@@ -109,5 +114,21 @@
 		}
 
 		handleTabs($(".tabs__btns .tabs__btn"), $(".tabs__content"));
+
+		function callPopup() {
+			const $popup = $(".popup");
+
+			$(".call-popup").click(function (e) {
+				e.preventDefault();
+				$popup.addClass("active");
+			});
+
+			$("#popup__close").click(function (e) {
+				e.preventDefault();
+				$popup.removeClass("active");
+			});
+		}
+
+		callPopup();
 	});
 })(jQuery);

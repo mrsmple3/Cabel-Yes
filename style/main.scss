@@ -143,7 +143,8 @@ h2 {
 	}
 }
 
-h3 {
+h3,
+.popup__title {
 	color: black;
 	font-size: size(36px);
 	font-family: Onest;
@@ -262,6 +263,107 @@ h5 {
 }
 .flex-stretch {
 	@include flex-stretch;
+}
+
+.popup {
+	position: fixed;
+	inset: 0;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0; //!
+	visibility: hidden; //!
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(0, 0, 0, 15%);
+	z-index: 20;
+	transition: all 0.5s;
+	&.active {
+		visibility: visible;
+		opacity: 1;
+	}
+	#popup__close {
+		position: absolute;
+		top: size(13px);
+		right: size(17px);
+		width: size(28.81px);
+		height: size(28.81px);
+		cursor: pointer;
+	}
+	.popup__container {
+		position: relative;
+		width: size(555px);
+		@include flex-col-center();
+		padding: size(50px) size(45px);
+		padding-bottom: size(65px);
+		background-color: white;
+		border-radius: 10px;
+		@media screen and (max-width: 1050px) {
+			width: 555px;
+		}
+		@media screen and (max-width: 550px) {
+			width: 80%;
+		}
+	}
+	.popup__title {
+		width: 100%;
+		text-align: center;
+		color: $main-color;
+		margin-bottom: size(22px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 23px;
+		}
+	}
+	.popup__product {
+		width: 100%;
+		text-align: center;
+		color: rgba(69.06, 69.06, 69.06, 0.7);
+		font-size: size(12px);
+		font-weight: 400;
+		line-height: size(20px);
+		word-wrap: break-word;
+		margin-bottom: size(28px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 28px;
+		}
+	}
+	input {
+		width: 100%;
+		padding: size(14px) size(20px);
+		color: rgba(139.19, 139.19, 139.19, 0.7);
+		font-size: size(16px);
+		font-weight: 400;
+		line-height: size(20px);
+		word-wrap: break-word;
+		border: 1px rgba(0, 0, 0, 0.1) solid;
+		border-radius: 5px;
+		margin-bottom: size(17.5px);
+		outline: none;
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 17.5px;
+		}
+	}
+	.popup__btn {
+		width: 100%;
+		@include btn(13px, 100px, $main-color, white);
+		margin-bottom: size(26px);
+		&:hover {
+			background-color: white;
+			color: $main-color;
+			border-color: $main-color;
+		}
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 26px;
+		}
+	}
+	.popup__sub {
+		text-align: center;
+		color: rgba(107, 107, 107, 0.6);
+		font-size: size(15px);
+		font-weight: 600;
+		line-height: size(16px);
+		word-wrap: break-word;
+	}
 }
 
 //* header start
@@ -1160,6 +1262,7 @@ main {
 
 //!about
 .about {
+	width: 100vw;
 	position: relative;
 	.about__fon {
 		position: absolute;
@@ -1270,7 +1373,7 @@ main {
 		}
 	}
 	.about__img {
-		width: 49.6%;
+		width: 50%;
 		height: 100%;
 		@include flex-end();
 		justify-content: end;
