@@ -4129,7 +4129,7 @@ footer {
 			grid-template-columns: repeat(1, 1fr);
 		}
 		&:nth-child(2n) {
-			img {
+			.info__img__container {
 				order: -1;
 				@media screen and (max-width: 1050px) {
 					order: 1;
