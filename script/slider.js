@@ -65,24 +65,26 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Выбираем элемент, который будет изменяться (главное изображение)
 		const mainImage = document.querySelector(".catalog-products-img");
 
-		// По умолчанию устанавливаем первое изображение слайда
-		const firstSlideImageSrc = document.querySelector(".offer__slider__item img").getAttribute("src");
-		mainImage.setAttribute("src", firstSlideImageSrc);
+		if (mainImage) {
+			// По умолчанию устанавливаем первое изображение слайда
+			const firstSlideImageSrc = document.querySelector(".offer__slider__item img").getAttribute("src");
+			mainImage.setAttribute("src", firstSlideImageSrc);
 
-		// Добавляем обработчик клика на каждый слайд
-		const productSlides = document.querySelectorAll(".offer__slider__item");
+			// Добавляем обработчик клика на каждый слайд
+			const productSlides = document.querySelectorAll(".offer__slider__item");
 
-		productSlides.forEach((slide) => {
-			slide.addEventListener("click", function () {
-				const newImageSrc = this.querySelector("img").getAttribute("src");
-				productSlides.forEach((slide) => {
-					slide.classList.remove("active");
+			productSlides.forEach((slide) => {
+				slide.addEventListener("click", function () {
+					const newImageSrc = this.querySelector("img").getAttribute("src");
+					productSlides.forEach((slide) => {
+						slide.classList.remove("active");
+					});
+					slide.classList.add("active");
+					// Меняем изображение
+					mainImage.setAttribute("src", newImageSrc);
 				});
-				slide.classList.add("active");
-				// Меняем изображение
-				mainImage.setAttribute("src", newImageSrc);
 			});
-		});
+		}
 	}
 
 	handleOfferProduct();

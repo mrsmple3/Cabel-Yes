@@ -3914,6 +3914,8 @@ footer {
 		@include flex-end();
 		@media screen and (max-width: 1050px) {
 			@include flex-col-start();
+			flex-direction: column-reverse;
+			gap: 40px;
 		}
 	}
 	li {
@@ -3961,6 +3963,7 @@ footer {
 		margin-bottom: size(170px);
 		@media screen and (max-width: 1050px) {
 			@include flex-col-start();
+			gap: 85px;
 		}
 	}
 	.leader-page__content {
@@ -3991,6 +3994,9 @@ footer {
 	.leader__img__container {
 		width: size(489px);
 		height: 100%;
+		@media screen and (max-width: 1050px) {
+			width: 100%;
+		}
 	}
 	.leader__img {
 		border-radius: 10px;
@@ -4047,17 +4053,23 @@ footer {
 		width: 100%;
 		@include flex-start();
 		@media screen and (max-width: 1050px) {
-			@include flex-start();
+			@include flex-col-start();
 			gap: 55px;
 		}
 		.text-content__subs {
 			width: size(587px);
+			@media screen and (max-width: 1050px) {
+				width: 100%;
+			}
 		}
 	}
 	.collective__img {
 		width: size(635px);
 		height: 100%;
 		border-radius: 10px;
+		@media screen and (max-width: 1050px) {
+			width: 100%;
+		}
 	}
 }
 
@@ -4080,5 +4092,70 @@ footer {
 	}
 	strong.text-content-sub {
 		font-weight: 600;
+	}
+}
+
+//!Production Card
+.production__card-page__container {
+	@include flex-col-start();
+}
+.production__card__content {
+	@include main-container();
+	@include flex-col-start();
+	margin-bottom: size(80px);
+	@media screen and (max-width: 1050px) {
+		margin-bottom: 83px;
+	}
+	.page-title {
+		margin-bottom: size(62px);
+		@media screen and (max-width: 1050px) {
+			margin-bottom: 47px;
+		}
+	}
+}
+.production__card__info {
+	width: 100%;
+	@include flex-col-start();
+	margin-bottom: size(116px);
+	@media screen and (max-width: 1050px) {
+		margin-bottom: 116px;
+	}
+	.info__card {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		background-color: white;
+		@media screen and (max-width: 1050px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		&:nth-child(2n) {
+			img {
+				order: -1;
+				@media screen and (max-width: 1050px) {
+					order: 1;
+				}
+			}
+			.info__card__content {
+				@include main-container();
+				padding-left: size(59px);
+				@media screen and (max-width: 1050px) {
+				}
+			}
+		}
+	}
+	.info__card__content {
+		@include main-container();
+		padding-right: size(59px);
+		padding-top: size(148px);
+		padding-bottom: size(148px);
+	}
+	.info__img__container {
+		width: 100%;
+		@media screen and (max-width: 1050px) {
+			@include main-container();
+			.info__img {
+				border-radius: 10px;
+			}
+		}
 	}
 }
