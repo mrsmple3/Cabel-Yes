@@ -437,8 +437,9 @@ header {
   padding-bottom: 0;
   background-color: white;
   border-radius: 5px;
-  overflow: hidden;
   z-index: 15;
+  overflow: hidden;
+  transition: all 0.3s;
 }
 .menu .submenu__container::-webkit-scrollbar {
   width: 3px;
@@ -451,9 +452,9 @@ header {
   outline: 1px solid rgba(68, 68, 68, 0.2666666667);
 }
 .menu .submenu__container.active {
-  overflow-y: auto;
   height: -moz-max-content;
   height: max-content;
+  overflow: visible;
   padding-top: calc(0.9583333333 * (1vw + 1vh));
   padding-bottom: calc(0.9583333333 * (1vw + 1vh));
 }

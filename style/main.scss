@@ -446,8 +446,9 @@ header {
 		padding-bottom: 0;
 		background-color: white;
 		border-radius: 5px;
-		overflow: hidden;
 		z-index: 15;
+		overflow: hidden;
+		transition: all 0.3s;
 		&::-webkit-scrollbar {
 			width: 3px;
 		}
@@ -459,8 +460,8 @@ header {
 			outline: 1px solid #4444;
 		}
 		&.active {
-			overflow-y: auto;
 			height: max-content;
+			overflow: visible;
 			padding-top: size(23px);
 			padding-bottom: size(23px);
 		}
