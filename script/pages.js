@@ -60,6 +60,7 @@
 			// Проверяем, произошел ли клик вне popup, чтобы закрыть его
 			if (!$(e.target).closest(".popup .popup__container").length && !$(e.target).hasClass("call-popup")) {
 				$(".popup").removeClass("active");
+				$("body").removeClass("overflow-hidden");
 			}
 		});
 
@@ -121,11 +122,13 @@
 			$(".call-popup").click(function (e) {
 				e.preventDefault();
 				$popup.addClass("active");
+				$("body").addClass("overflow-hidden");
 			});
 
 			$("#popup__close").click(function (e) {
 				e.preventDefault();
 				$popup.removeClass("active");
+				$("body").removeClass("overflow-hidden");
 			});
 		}
 
