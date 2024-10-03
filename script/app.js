@@ -43,55 +43,176 @@
 			}
 		);
 
-		mainBlockGsap
-			.fromTo(
-				".logo",
-				{
-					opacity: 0,
-					y: "-100%",
-				},
-				{
-					opacity: 1,
-					y: 0,
-					duration: 0.3,
-				}
-			)
-			.fromTo(
-				"header",
-				{
-					opacity: 0,
-					y: 30,
-				},
-				{
-					opacity: 1,
-					y: 0,
-					duration: 0.3,
-				}
-			)
+		if ($("main .offer").length > 0) {
+			mainBlockGsap
+				.fromTo(
+					".logo",
+					{
+						opacity: 0,
+						y: "-100%",
+					},
+					{
+						opacity: 1,
+						y: 0,
+						duration: 0.3,
+					}
+				)
+				.fromTo(
+					"header",
+					{
+						opacity: 0,
+						y: 30,
+					},
+					{
+						opacity: 1,
+						y: 0,
+						duration: 0.3,
+					}
+				)
+				.fromTo(
+					"main",
+					{
+						opacity: 0,
+						y: 30,
+					},
+					{
+						opacity: 1,
+						y: 0,
+						duration: 0.3,
+					}
+				)
+				.fromTo(
+					".yes",
+					{
+						x: "-100%",
+						duration: 0.3,
+					},
+					{
+						x: 0,
+						duration: 0.3,
+					}
+				);
 
-			.fromTo(
-				"main",
-				{
-					opacity: 0,
-					y: 30,
-				},
-				{
-					opacity: 1,
-					y: 0,
-					duration: 0.3,
-				}
-			)
-			.fromTo(
-				".yes",
-				{
-					x: "-100%",
-					duration: 0.3,
-				},
-				{
-					x: 0,
-					duration: 0.3,
-				}
-			);
+			// Запуск анимации при загрузке страницы
+			mainBlockGsap.play();
+		}
+
+		function animationTrigger($block, $toAnimates) {
+			if ($block.length > 0) {
+				const timeline = gsap.timeline({
+					defaults: { delay: 0.1 },
+					paused: true, // Таймлайн будет запущен позже вручную
+				});
+
+				$toAnimates.forEach(($element, index) => {
+					timeline.fromTo(
+						$element,
+						{
+							opacity: 0,
+							y: 30,
+						},
+						{
+							opacity: 1,
+							y: 0,
+							duration: 0.3,
+							delay: index * 0.002,
+						}
+					);
+				});
+
+				// ScrollTrigger для запуска анимации при попадании в видимую область
+				ScrollTrigger.create({
+					trigger: $block,
+					start: "top 75%",
+					end: "bottom 25%", // Блок находится в видимости до нижней части
+					once: true, // Запуск только один раз
+					onEnter: () => {
+						timeline.play();
+					},
+				});
+			}
+		}
+
+		animationTrigger($(".about"), [
+			$(".about .about__title"),
+			$(".about .img-about"),
+			$(".about .span-text"),
+			$(".about .sub"),
+			$(".about .num__container"),
+			$(".about .about__btn"),
+			$(".about .material__btn"),
+		]);
+
+		animationTrigger($(".quality"), [
+			$(".quality .quality__title"),
+			$(".quality .quality__benefits__item").first(),
+			$(".quality .img-quality"),
+			$(".quality .quality__benefits__item").last(),
+			$(".quality .span-text"),
+			$(".quality .sub"),
+		]);
+
+		animationTrigger($(".benefits"), [
+			$(".benefits .benefits__title"),
+			$(".benefits .span-text"),
+			$(".benefits .sub"),
+			$(".benefits .benefits__block"),
+			$(".benefits .benefits__nums .flex-col-start").eq(0),
+			$(".benefits .benefits__nums .flex-col-start").eq(1),
+			$(".benefits .benefits__nums .flex-col-start").eq(2),
+			$(".benefits .project__btn"),
+			$(".benefits .benefits__sub"),
+		]);
+
+		animationTrigger($(".catalog-options"), [
+			$(".catalog-options .catalog-options__title").first(),
+			$(".catalog-options .catalog-options__title").last(),
+			$(".catalog-options .sub"),
+			$(".catalog-options .logo__container"),
+		]);
+
+		animationTrigger($(".partners"), [
+			$(".partners .partners__title"),
+			$(".partners .sub"),
+			$(".partners .span-text"),
+			$(".partners .partners__item"),
+			$(".partners .partners__link"),
+		]);
+
+		animationTrigger($(".global"), [
+			$(".global .global__title"),
+			$(".global .word-map"),
+			$(".global .span-text"),
+			$(".global .sub"),
+			$(".global .production__btn"),
+		]);
+
+		animationTrigger($(".keybenefits"), [
+			$(".keybenefits .keybenefits__title"),
+			$(".keybenefits .span-text"),
+			$(".keybenefits .keybenefits__block"),
+			$(".keybenefits .sub"),
+			$(".keybenefits .keybenefits__cards"),
+		]);
+
+		animationTrigger($(".questions"), [$(".questions .questions__title"), $(".questions .questions__sub"), $(".questions .questions__btn")]);
+
+		animationTrigger($(".news"), [$(".news .news__title"), $(".news .news__btn"), $(".news .span-text"), $(".news .news__cards"), $(".news .news__link")]);
+
+		animationTrigger($(".projects"), [$(".projects .projects__title"), $(".projects .span-text"), $(".projects .projects__cards")]);
+
+		animationTrigger($("footer"), [
+			$("footer .contact__title"),
+			$("footer .span-text"),
+			$("footer .sub"),
+			$("footer form"),
+			$("footer .contact__phone__container .flex-col-start").first(),
+			$("footer .contact__phone__container .flex-col-start").last(),
+			$("footer .contact__mail"),
+			$("footer .contact__law"),
+			$("footer .contact__company"),
+			$("footer .contact__time"),
+		]);
 
 		gsap.fromTo(
 			".questions .fon-questions",
@@ -118,12 +239,6 @@
 		);
 
 		//!Header
-		// Загрузка хедера
-		$("#header__container").load("./header.html");
-
-		// Загрузка футера
-		// $("footer").load("./footer.html");
-
 		if ($minWidthMobile) {
 			gsap.to("header", {
 				boxShadow: "0px 4px 50px rgba(0, 0, 0, 0.07)",
@@ -419,6 +534,5 @@
 		});
 
 		//!Calculator
-		
 	});
 })(jQuery);
